@@ -19,17 +19,30 @@ const OrderState = (props) => {
   const initialState = {
     orderProducts: [],
     total: 0,
+    pastOrders: [],
     pop: false,
   };
 
   const [state, dispatch] = useReducer(orderReducer, initialState);
 
-  // Get Order
-  const getOrder = async () => {
-    dispatch({ type: GET_ORDERS });
+  // Get Orders to display on the orderhistory page
+  const getOrders = async () => {
+    try {
+      const res = await axios.get("/api/order");
+
+      dispatch({
+        type: GET_ORDERS,
+        payload: res.data,
+      });
+    } catch (err) {
+      dispatch({
+        type: ORDER_ERROR,
+        payload: err.response,
+      });
+    }
   };
 
-  //Add Order
+  //Add Orders to the database when clicked on submit of place order
   const addOrder = async (orderProducts, total) => {
     const order = { orderProducts, total };
     const config = {
@@ -43,7 +56,7 @@ const OrderState = (props) => {
     } catch (err) {
       dispatch({
         type: ORDER_ERROR,
-        payload: err.response.msg,
+        payload: err.response,
       });
     }
   };
@@ -86,8 +99,9 @@ const OrderState = (props) => {
       value={{
         orderProducts: state.orderProducts,
         total: state.total,
+        pastOrders: state.pastOrders,
         pop: state.pop,
-        getOrder,
+        getOrders,
         addOrder,
         addToCart,
         deleteFromCart,

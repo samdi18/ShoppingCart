@@ -15,13 +15,12 @@ export default (state, action) => {
     case GET_ORDERS:
       return {
         ...state,
+        pastOrders: action.payload,
       };
-    // case ADD_ORDER:
-    //   return {
-    //     ...state,
-    //     order: [action.payload],
-
-    //   };
+    case ADD_ORDER:
+      return {
+        ...state,
+      };
     case ADD_TO_CART:
       //check if the action id exists in the orderedProducts
       let existed_item = state.orderProducts.filter(

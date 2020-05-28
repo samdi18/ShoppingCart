@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
 });
 
 // @route     POST api/order
-// @desc      Adds order
+// @desc      Adds order to the database
 router.post("/", async (req, res) => {
   const { orderProducts, total } = req.body;
 
@@ -34,14 +34,8 @@ router.post("/", async (req, res) => {
   }
 });
 
-// @route     PUT api/contacts/:id
-// @desc      Update contact
-// @access    Private
 router.put("/:id", async (req, res) => {});
 
-// @route     DELETE api/contacts/:id
-// @desc      Delete contact
-// @access    Private
 router.delete("/:id", async (req, res) => {});
 
 module.exports = router;

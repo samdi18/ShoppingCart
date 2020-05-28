@@ -185,3 +185,28 @@ ul {
 .flower-img {
   width: 20px;
 }
+
+.history-item {
+  padding: 15px 10px;
+  border: #589fb3 1px dotted;
+  margin: 0.7rem 0;
+  width: 500px;
+}
+
+.order-date {
+  margin-bottom: 10px;
+}
+
+.grand-total {
+  margin-top: 10px;
+}
+
+.name,
+.qty {
+  margin-right: 30px;
+}
+
+.items {
+  display: flex;
+  justify-content: space-evenly;
+}
