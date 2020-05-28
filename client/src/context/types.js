@@ -1,0 +1,12 @@
+export const GET_PRODUCTS = "GET_PRODUCTS";
+export const PRODUCTS_ERROR = "PRODUCTS_ERROR";
+export const ADD_ORDER = "ADD_ORDERS";
+export const ORDER_ERROR = "ORDER_ERROR";
+export const GET_ORDERS = "GET_ORDERS";
+export const ADD_TO_CART = "ADD_TO_CART";
+export const DELETE_FROM_CART = "DELETE_FROM_CART";
+export const CLEAR_CART = "CLEAR_CART";
+export const INCREASE_QTY = "INCREASE_QTY";
+export const DECREASE_QTY = "DECREASE_QTY";
+export const POP_PLACE_ORDER = "POP_PLACE_ORDER";
+export const REMOVE_POP = "REMOVE_POP";

@@ -1,0 +1,3 @@
+{
+  "mongoURI": "mongodb+srv://samdi123:samdi123!@shoppingcart-rcecs.mongodb.net/test?retryWrites=true&w=majority"
+}
